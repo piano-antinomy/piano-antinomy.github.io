@@ -900,7 +900,7 @@ Best,
 Sanjay
 </code></pre>
 <p>Cindy慢慢把鼠标从邮件正文移到左边，“Mark as unread”。停顿了一下，又点了回来，重新又读了一遍。她不敢相信，她不知道来来回回读了多少遍，仍然不敢相信这次巨大的reorg就如同针对自己一样把自己的亲生骨肉残忍剥离。</p>
-<p>她想笑，可怎么都笑不出来。原本想着，回来之后继续完善那套Wolf的Auth pipeline，把prototype推进上线，让组里看到自己的能力，这是她回国前夜以继日在做的东西，是她调研、构架、设计、验证一整套下来亲手写出来的，是她期待promotion希望的关键项目。她点开Slack，果然，在她离开的这些日子里，各种project channel已经悄悄被加了‘deprecated’字眼，而进去新的项目channel里，看到Angela每天的status update就如同钢针一般刺伤自己的眼睛。她忽然觉得自己很可笑，离开前还那么信任Angela，还在饭桌前把半碗饭撂下，掏出几个小时细细讲流程、讲设计、讲上线的方法，讲到嗓子干，讲到饭菜都凉了。她以为是在扶持一个后辈，没想到是把让别人把自己当梯子给爬了上去。</p>
+<p>她想笑，可怎么都笑不出来。原本想着，回来之后继续完善那套Wolf的Auth pipeline，把prototype推进上线，让组里看到自己的能力，这是她回国前夜以继日在做的东西，是她调研、构架、设计、验证一整套下来亲手写出来的，是她期待promotion希望的关键项目。她点开Slack，果然，在她离开的这些日子里，各种project channel已经悄悄被加了‘deprecated’字眼，而进去新的项目channel里，看到Angela每天的status update就如同钢针一般刺伤自己的眼睛。她忽然觉得自己很可笑，离开前还那么信任Angela，还在饭桌前把半碗饭撂下，掏出几个小时细细讲流程、讲设计、讲上线的方法，讲到嗓子干，讲到饭菜都凉了。她以为是在扶持一个后辈，没想到是让别人把自己当梯子给爬了上去。</p>
 <p>“不对，Prood为什么会突然变成这个项目的owner呢？他原本是下游的dashboard负责人呢。” Cindy冷静的想到，</p>
 <p>“Cindy姐，刚刚开完会，Prood说Wolf推进要快一些，我准备这几天就上1%的traffic了，你当时给我的信息特别有用，真的很感谢呀！” Angela短裙光着腿踩着一双小白鞋飘了过来，大眼睛无辜的看着Cindy。</p>
 <p>Cindy只是一笑，“Good Luck！”</p>
@@ -918,13 +918,13 @@ Sanjay
 <p>Prood笑的合不拢嘴，正在给大领导写一封launch email，要让所有领导都知道这么完美的launch。只是他走过Cindy的桌子的时候，Cindy却敏锐的闻到了他身上同样的蓝色风铃香水味。</p>
 <p>一个sev2 ticket刺破了宁静。Cindy打开看了一下，看到Angela已经在ticket里面开始研究，但是还是好奇，就看了这个ticket的内容。ticket开始显示，新的auth pipeline的几个cache server某一个运行模块内存使用率飙到100%，若干auth的request开始出现失败，然后自动retry开始引发整个latency逐步增加。刚才喜悦无比的metrics开始出现各种浮动，随着traffic的failure，不同的sev2 ticket开始进入，pager的响声在office此起彼伏。1%的流量里面现在failure rate已经高达5%。</p>
 <p>“rollback！” 虽然Angela还想看看有什么bug可以尽快修复，但是Prood等不及了，下达了rollback的指令。</p>
-<p>按照原计划，rollback只需要将config&#x3D;off写入control plane即可。Angela无奈，只好做出操作，心想着这次launch party肯定没了。她盯着metrics，期待写入之后的config能够将metrics重新带回去，虽然回到590ms，但是至少failure rate会大幅度下降。</p>
+<p>按照原计划，rollback只需要将switch&#x3D;off写入control plane即可。Angela无奈，只好做出操作，心想着这次launch party肯定没了。她盯着metrics，期待写入之后的config能够将metrics重新带回去，虽然回到590ms，但是至少failure rate会大幅度下降。</p>
 <p>一分钟，五分钟，十分钟。</p>
 <p>“Angela，你到底有没有rollback！”Prood急了！</p>
 <p>”Yes I did！but not sure why traffic is not back to the original path!“ Angela焦急的说道，</p>
 <p>Launch party变成了oncall war room，天堂地狱，一念之间。</p>
 <p>Cindy坐在边上看着这一堆热锅上的蚂蚁，不禁好奇为啥rollback没有生效，她点开层层代码，很快便一声冷笑，她发现rollback的feature根本没有被实测过，Angela过于自信也过于着急，根本没有把rollback feature测试过，这里面rollback的config写入有一些bug没有被抓到。</p>
-<p>但是，虽然config写不进去，rollback还是可以手动调整各项fleet的预设初始值，并且重启fleet来达到的。Angela完全没有这方面的经验，不知道如何快速手动的调整prod的各项switch数值，焦急的手脚冰凉。Sanjay开始了责问，要求尽快解决问题，不一会儿，VP也在ticket上询问什么时候能缓解问题。</p>
+<p>但是，虽然config写不进去，rollback还是可以手动调整各项fleet的预设初始值，并且重启fleet来达到的。Angela完全没有这方面的经验，不知道如何快速手动的调整prod的各项switch数值，焦急的手脚冰凉。Sanjay开始了责问，要求尽快解决问题，不一会儿，VP也在ticket上询问什么时候能缓解问题。ticket已经被升级到了sev1.</p>
 <p>Angela机械的打开prod host的server log，一行行熟悉又陌生的log，各种issue和压力下她几乎丧失了思考能力，她听不到任何人说话，也不知道现在怎么才能把traffic修复到old path上，哭爹喊娘都没用的时候，突然一条log让她眼球一颤：</p>
 <pre><code>[US-prod-1][fatal] 00:01:07.239 - aGUgaXMgd2F0Y2hpbmcgeW91
 </code></pre>
@@ -996,6 +996,10 @@ Sanjay
       <ul>
         
           <li>
+            <a href="/2025/04/26/The-Code-7/">幽灵代码-7</a>
+          </li>
+        
+          <li>
             <a href="/2025/04/05/The-Code-8/">幽灵代码-8</a>
           </li>
         
@@ -1009,10 +1013,6 @@ Sanjay
         
           <li>
             <a href="/2024/12/15/The-Code-4/">幽灵代码-4</a>
-          </li>
-        
-          <li>
-            <a href="/2024/11/17/The-Code-3/">幽灵代码-3</a>
           </li>
         
       </ul>
