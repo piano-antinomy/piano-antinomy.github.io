@@ -14,7 +14,7 @@
 <meta property="og:description" content="Angela从未见过这样的fatal log，但是它还在继续，    [US-prod-1][fatal] 00:01:07.239 - aGUgaXMgd2F0Y2hpbmcgeW91   [US-prod-1][fatal] 00:01:08.131 - aGUgaXMgd2F0Y2hpbmcgeW91   [US-prod-1][fatal] 00:01:09.338 - aGUgaXMgd">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-04-26T14:23:40.000Z">
-<meta property="article:modified_time" content="2025-04-27T07:05:36.961Z">
+<meta property="article:modified_time" content="2025-05-02T06:05:43.032Z">
 <meta property="article:author" content="piano-antinomy">
 <meta property="article:tag" content="幽灵代码">
 <meta name="twitter:card" content="summary">
@@ -116,7 +116,7 @@
 <p>“是 - 不惜一切代价，先解决这个问题，让客户影响变到最小？” Cindy半信半疑，</p>
 <p>“你答对了一半！mitigation的确是最重要的，现在一堆级联事故都指向了我们network auth的事故，全公司都等着看大的COE呢，领导自然很着急先修复好。”， Tiago顿了一下，接着打字，</p>
 <p>“但是，还有另一半，你要知道领导谁也不愿意自己承担责任，如果这个事故出现之后，TL连root cause几个小时都搞不出来，TL自己被开也就算了，估计上下两级领导都有不少连带责任，因为TL是他们安排的，prod change是他们审核批准的。” </p>
-<p>Tiago坚定的在slack写道，“你现在不仅要修复，更要帮着大领导Sanjay撇清责任，这样你就饶过了Prood，你把credit拿走并且重新带领project，同时玩死Angela和Prood吧！” </p>
+<p>Tiago坚定的在slack写道，“你现在不仅要修复，更要帮着大领导Sanjay撇清责任，这样你就绕过了Prood，你把credit拿走并且重新带领project，同时玩死Angela和Prood吧！” </p>
 <p>Cindy顿悟，这果然是自己绝佳的机会。</p>
 <p>她正要动手修复，准备开始重启fleet重新读取flip之后的config，“等等”，Tiago打断了她，</p>
 <p>“你忘了，先说再做，才是最好的？” Tiago问道，</p>
@@ -128,7 +128,7 @@
 <p>一分钟，5分钟过去，failure metrics开始回归正轨，10分钟过去，有效的流量全部退回了老的auth路径，开始继续正常工作。30min，所有alarm都被清掉了。sev1也降级成了sev4用以追寻之后的root cause。</p>
 <p>Cindy长舒一口气，看着不远处坐着的Angela，还是面如死灰，但是Cindy却喜上眉梢。包括VP在内的大领导均在ticket里赞不绝口，指名道姓的感谢Cindy的巨大帮助。</p>
 <p>“别忘了，总结陈词，但是有些话可以公开，而有些话只能够私信”，Tiago再次提醒到，</p>
-<p>Cindy秒懂，她在ticket里面把这次事故的impact，原因，mitigation方法概括总结了一遍，并且严明的指出，该项目负责人Angela必须事后写出COE，解决流程问题，已经回答为什么rollback模块没有被实测的原因。</p>
+<p>Cindy秒懂，她在ticket里面把这次事故的impact，原因，mitigation方法概括总结了一遍，并且严明的指出，该项目负责人Angela必须事后写出COE，解决流程问题，以及回答为什么rollback模块没有被实测的原因。</p>
 <p>同时，她简要的向Sanjay发了email并且cc给了他下面所有manager：</p>
 <p>Hi Sanjay,</p>
 <p>Following up on today’s SEV1 incident: The root cause was memory exhaustion at the API gateway due to improper request handling, plus the problematic rollback tool.<br>Additionally, I noticed that the recent production rollout did not fully follow the established deployment best practices, which contributed to the incident.</p>
@@ -159,7 +159,7 @@
 <p>Angela蜷缩在一角，听着Prood的话，焦躁和寒意开始蔓延，但短裙下裸着的双腿在冰冷的地板上微微发抖，她下意识的靠近了Prood，试图寻求一丝温暖。</p>
 <p>“反正和Prood也不是第一次了” Angela心想到，</p>
 <p>两人之间的距离越来越近。</p>
-<p>Prood感受到Angela靠了过来，下意识的伸手扶住了她。手掌触及她光滑冰凉的大腿的一瞬间，空气仿佛凝滞了。一阵轻微的颤抖后，Prood炙热急切的吻了上去。并且一路扩散，从唇到耳垂，再到她细腻的肩颈，带着不容抗拒的侵略性。Angela闭上眼睛，任由自己在黑暗中沉沦。</p>
+<p>Prood感受到Angela靠了过来，下意识的伸手扶住了她。手掌触及她光滑冰凉的大腿的一瞬间，空气仿佛凝滞了。一阵轻微的颤抖后，Prood炙热急切的吻了上去。并且一路扩散，从唇到耳垂，再到她细腻的肩颈，带着不容抗拒的侵略性。Angela闭上眼睛，任由自己在黑暗到几乎令人作呕的咖喱味中沉沦。</p>
 <p>窒息般的黑暗里，二人身体的本能战胜了一切。粗重的呼吸交叠，在封闭的电梯里弥漫。姿势变换之间，地板晃动，偶尔撞击到电梯墙壁，发出声声的闷响。</p>
 <p>良久，皆瘫坐在电梯地板，穿起了衣服并且彼此依靠喘息着，四周是不变的死寂，心跳声还在余烬一样燃烧。</p>
 <p>黑暗溢满了整个空间的时候，任何光亮都能让人惊悚，突然，电梯里的灯光开始忽明忽暗，全屏幕开始不停的闪烁一行字幕，</p>
@@ -181,10 +181,19 @@
     
 <nav id="article-nav">
   
+    <a href="/2025/05/01/The-Code-8/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          幽灵代码-8
+        
+      </div>
+    </a>
   
-    <a href="/2025/04/05/The-Code-8/" id="article-nav-older" class="article-nav-link-wrap">
+  
+    <a href="/2025/04/03/The-Code-6/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">后一篇</strong>
-      <div class="article-nav-title">幽灵代码-8</div>
+      <div class="article-nav-title">幽灵代码-6</div>
     </a>
   
 </nav>
@@ -223,7 +232,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/04/">四月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/02/">二月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/12/">十二月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/11/">十一月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/10/">十月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">五月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">三月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/10/">十月 2023</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/08/">八月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/05/">五月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/04/">四月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/02/">二月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/12/">十二月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/11/">十一月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/10/">十月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">五月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">三月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/10/">十月 2023</a></li></ul>
     </div>
   </div>
 
@@ -236,11 +245,15 @@
       <ul>
         
           <li>
-            <a href="/2025/04/26/The-Code-7/">幽灵代码-7</a>
+            <a href="/2025/08/05/The-Code-20/">幽灵代码-20</a>
           </li>
         
           <li>
-            <a href="/2025/04/05/The-Code-8/">幽灵代码-8</a>
+            <a href="/2025/05/01/The-Code-8/">幽灵代码-8</a>
+          </li>
+        
+          <li>
+            <a href="/2025/04/26/The-Code-7/">幽灵代码-7</a>
           </li>
         
           <li>
@@ -249,10 +262,6 @@
         
           <li>
             <a href="/2025/02/25/The-Code-5/">幽灵代码-5</a>
-          </li>
-        
-          <li>
-            <a href="/2024/12/15/The-Code-4/">幽灵代码-4</a>
           </li>
         
       </ul>
